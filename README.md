@@ -1,46 +1,93 @@
-# Getting Started with Create React App
+##### What's Being Used?
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- [react](http://facebook.github.io/react/) for managing the presentation logic of application.
+- [typescript](https://www.npmjs.com/package/typescript) to use the typescript features in JS.
+- [axios](https://www.npmjs.com/package/axios) for making AJAX calls to a server.
+- [styled-components](https://styled-components.com/) to use CSS in JS.
+- [node-sass](https://npmjs.org/package/node-sass) for sass support.
+- [lodash](https://www.npmjs.com/package/lodash) to use the utilities of Javascript.
+- [react-perfect-scrollbar](https://www.npmjs.com/package/perfect-scrollbar-react) to use the customize scrollbar in app & to support infinite scroll.
 
-## Available Scripts
+## Getting Started
 
-In the project directory, you can run:
+In order to get started developing, you'll need to do a few things first.
 
-### `npm start`
+1. Install all of the `node_modules` required for the package. Depending on the computer's configuration, you may need to prefix this command with a `sudo`.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```
+npm install
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+or
 
-### `npm test`
+```
+sudo npm install
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`yarn` can be used it is already installed
 
-### `npm run build`
+```
+yarn install
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+or
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+sudo yarn install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Lastly, run the start command to get the project off the ground.
 
-### `npm run eject`
+```
+npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+or
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+yarn start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+4. Head over to [http://localhost:3000](http://localhost:3000) to see the app live!
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## File Structure
 
-## Learn More
+### build/
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This is where application will be compiled. Assets, like images and fonts, should be placed directly within this folder. Also in this folder is a default `index.html` file for serving up the application.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### src/
+
+The client folder houses the client application for project. This is where client-side Javascript components (and their directly accompanying styles) live.
+
+## App Components
+
+### api/
+
+API directory contains the api calls which are triggering through the app. The purpose of api/ directory is to create an abstract layer for api with function with the paramters.
+
+### assets/
+
+Assets contains images and css resources of app
+
+### components/
+
+Components contains all the feature of blocks application page. Components should work like feature based widgets and should be rendered through the pages.
+
+### pages/
+
+Pages contains all the application pages or top level react-router components. Pages are being used to implement the layout/grid of any page.
+
+#### pages/\*/ducks/
+
+Each ducks directory in pages directory contains all the redux resources like action-types, action-creators, & reducers.
+
+### routes/
+
+Routes has the configuration of all the react routes which are being used in app.
+
+### utils/
+
+Utilities that can be used by any part of application.
+
+This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).

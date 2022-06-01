@@ -1,0 +1,31 @@
+.modal-content {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  background-color: #27282a;
+  border-radius: 0;
+  border: none;
+  color: white;
+  padding: 12px 25px;
+  .modal-header {
+    padding: 0;
+    border: none;
+  }
+  .modal-body {
+    padding: 0;
+  }
+  .modal-title {
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0 0 10px;
+  }
+  .close {
+    text-shadow: none;
+    color: white;
+    padding: 0;
+    font-weight: 300;
+    margin: 0;
+    font-size: 22px;
+    outline: none;
+  }
+}

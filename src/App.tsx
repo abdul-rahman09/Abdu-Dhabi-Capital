@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { createContext, useState } from "react";
+import { Router } from "react-router-dom";
+import history from "utils/history";
+import Routes from "routes";
+import "assets/css/App.scss";
 
-function App() {
+export const ReferenceDataContext = createContext({
+  language: {},
+  setLanguage: () => {},
+});
+
+export const ReferenceDataContextProvider = ({ children }) => {
+  const [language, setLanguage] = useState<any>({});
+  const value: any = { language, setLanguage };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ReferenceDataContext.Provider value={value}>
+      {children}
+    </ReferenceDataContext.Provider>
   );
-}
+};
+
+const App: React.FC = () => {
+  return (
+    <ReferenceDataContextProvider>
+      <Router history={history}>
+        <Routes />
+      </Router>
+    </ReferenceDataContextProvider>
+  );
+};
 
 export default App;
